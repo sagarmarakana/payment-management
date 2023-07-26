@@ -1,0 +1,14 @@
+.error {
+    text-align: left;
+    color: red;
+}
+
+.form-pannel {
+    border: 1px solid #faebcc;
+}
+
+.pannel-heading {
+    padding: 9px;
+    background-color: #fcf8e3;
+    font-weight: 500;
+}
