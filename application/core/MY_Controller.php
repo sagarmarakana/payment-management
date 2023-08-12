@@ -21,7 +21,6 @@ class Admin_Controller extends CI_Controller {
 		if (empty($this->session->userdata('id'))) {
 			redirect('auth/login', 'refresh');
 		}
-
 		$this->user = $this->general_model->getOne('users', array('id' => $this->session->userdata('id')));
 	}
 
