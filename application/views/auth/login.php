@@ -25,7 +25,7 @@
                                         <?php echo form_error('password'); ?>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="code" min="6" max="6" class="form-control" placeholder="Enter 2FA code">
+                                        <input type="text" name="code" min="6" max="6" class="form-control" placeholder="Enter 2FA code" autocomplete="false">
                                         <?php echo form_error('code'); ?>
                                     </div>
                                     <div class="form-footer mt-1">

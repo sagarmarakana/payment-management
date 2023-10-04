@@ -4,7 +4,7 @@
         <div class="container-fluid">
             <div class="d-flex">
                 <a class="header-brand" href="<?=base_url('admin/dashboard');?>">
-                    <img class="header-brand-img desktop-logo" src="<?=base_url('uploads/logo.png') ?>">
+                    PMS
                 </a>
                 <a href="#" data-toggle="sidebar" class="nav-link icon toggle"><i class="fe fe-align-justify fs-20"></i></a>
                 <div class="d-flex header-right ml-auto">

@@ -527,4 +527,4 @@ $config['proxy_ips'] = '';
 /*
 * Site title will be displayed in page title
 */
-$config['site_title'] = 'Ambition';
+$config['site_title'] = 'Payment Management System';

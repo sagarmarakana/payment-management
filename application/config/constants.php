@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-define('SHOW_UPLOAD_MEDIA', 'http://localhost/ambition/');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

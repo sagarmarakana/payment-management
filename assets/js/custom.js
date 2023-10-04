@@ -24,7 +24,23 @@ function users_action(x, name, fields){
     link += '<a class="action-icon waves-effect waves-light text-success" href="' + site_url + 'admin/users/edit/' + x + '" style="color:#6C757D;" title="Edit User"><i class="icon-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp'; 
     link += "<a href='javascript:void(0)' title='Delete User' title='Delete User' class='po action-icon waves-effect waves-light text-danger' data-html='true' data-placement='left' data-toggle='popover' data-original='alert primary' data-trigger='focus' data-content=\"<p>Are you sure, you want to delete User?</p><a class='btn btn-danger po-delete' href='" + site_url + "admin/users/delete/" + x + "'>Yes I'm sure</a>&nbsp;&nbsp;<a class='btn btn-light po-close'>No</a>\" ><i class='icon-trash'></i></a>&nbsp;&nbsp;";
     return link;
- }
+}
+
+function bank_action(x){
+    x = id_encrypt(x);
+    var link = '';
+    link += '<a class="action-icon waves-effect waves-light text-success" href="' + site_url + 'admin/banks/edit/' + x + '" style="color:#6C757D;" title="Edit Bank"><i class="icon-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp'; 
+    link += "<a href='javascript:void(0)' title='Delete Bank' title='Delete Bank' class='po action-icon waves-effect waves-light text-danger' data-html='true' data-placement='left' data-toggle='popover' data-original='alert primary' data-trigger='focus' data-content=\"<p>Are you sure, you want to delete Bank?</p><a class='btn btn-danger po-delete' href='" + site_url + "admin/banks/delete/" + x + "'>Yes I'm sure</a>&nbsp;&nbsp;<a class='btn btn-light po-close'>No</a>\" ><i class='icon-trash'></i></a>&nbsp;&nbsp;";
+    return link;
+}
+
+function wallet_action(x){
+    x = id_encrypt(x);
+    var link = '';
+    link += '<a class="action-icon waves-effect waves-light text-success" href="' + site_url + 'admin/wallet/edit/' + x + '" style="color:#6C757D;" title="Edit Wallet"><i class="icon-pencil"></i></a>&nbsp;&nbsp;&nbsp;&nbsp'; 
+    link += "<a href='javascript:void(0)' title='Delete Wallet' title='Delete Wallet' class='po action-icon waves-effect waves-light text-danger' data-html='true' data-placement='left' data-toggle='popover' data-original='alert primary' data-trigger='focus' data-content=\"<p>Are you sure, you want to delete Wallet?</p><a class='btn btn-danger po-delete' href='" + site_url + "admin/wallet/delete/" + x + "'>Yes I'm sure</a>&nbsp;&nbsp;<a class='btn btn-light po-close'>No</a>\" ><i class='icon-trash'></i></a>&nbsp;&nbsp;";
+    return link;
+}
 
 $("#add_user").validate({
     ignore: ':hidden',
@@ -101,6 +117,40 @@ $("#edit_user").validate({
      }
 });
 
+$('#add_bank').validate({
+    ignore: ':hidden',
+    errorElement: 'span',
+    rules: {
+        bank_name: 'required',
+        account_type: 'required',
+        login_username: 'required',
+        password: 'required',
+        owner_name: 'required',
+        internal_account_number: 'required',
+    },
+    errorPlacement: function(error, element) {
+        if (element.parent('.form-group').length) {
+            error.appendTo(element.parent());
+        }
+    }
+});
+
+$('#add_wallet').validate({
+    ignore: ':hidden',
+    errorElement: 'span',
+    rules: {
+        account_id: 'required',
+        wallet_type: 'required',
+        internal_name: 'required',
+        bhim_upi_id: 'required',
+        bhim_upi_name: 'required',
+    },
+    errorPlacement: function(error, element) {
+        if (element.parent('.form-group').length) {
+            error.appendTo(element.parent());
+        }
+    }
+});
 
 $(document).on('click', '[data-target="#lightbox"]', function (e) {
         e.preventDefault();

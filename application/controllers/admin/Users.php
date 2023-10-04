@@ -8,12 +8,15 @@ class Users extends Admin_Controller
         parent::__construct();
         $this->user_id = $this->session->userdata('id');
         $this->form_validation->set_error_delimiters("<div class='error'>", "</div>");
+        if($this->session->userdata('user_type') != 1){
+            $this->session->set_flashdata('message', array('0', 'You do not have permission to access that module.'));
+            redirect('admin/dashboard', 'refresh');
+        }
     }
 
     public function index()
     {
-        $this->data['title']      = 'Users';
-        $user_id = $this->user_id;
+        $this->data['title'] = 'Users';
         $this->template->admin_render('admin/users/index', $this->data);
     }
 
